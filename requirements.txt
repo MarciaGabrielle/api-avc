@@ -6,4 +6,4 @@ joblib
 openai
 gunicorn
 os
-dotenv
+python-dotenv
