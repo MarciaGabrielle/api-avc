@@ -5,6 +5,8 @@ from flask import Flask, request, jsonify
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import joblib
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
 # 🔹 Inicializar API Flask
 app = Flask(__name__)
@@ -24,8 +26,11 @@ label_encoders = {
 # 🔹 Criar normalizador MinMaxScaler
 scaler = MinMaxScaler(feature_range=(0, 1))
 
+# Carregar variáveis do arquivo .env
+load_dotenv()
+
 # 🔹 Configurar a chave da API da OpenAI
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def generate_recommendations(input_data, prediction):
