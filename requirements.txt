@@ -5,3 +5,5 @@ scikit-learn
 joblib
 openai
 gunicorn
+os
+dotenv
