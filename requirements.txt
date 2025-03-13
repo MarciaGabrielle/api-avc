@@ -6,3 +6,4 @@ joblib
 openai
 gunicorn
 python-dotenv
+flask-cors
