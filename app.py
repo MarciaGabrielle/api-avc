@@ -8,6 +8,9 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
+from flask_cors import CORS
+CORS(app)  # Isso permite requisições de qualquer origem
+
 # 🔹 Inicializar API Flask
 app = Flask(__name__)
 
