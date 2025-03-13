@@ -8,11 +8,11 @@ from openai import OpenAI
 import os
 from dotenv import load_dotenv
 
-from flask_cors import CORS
-CORS(app)  # Isso permite requisições de qualquer origem
-
 # 🔹 Inicializar API Flask
 app = Flask(__name__)
+
+from flask_cors import CORS
+CORS(app)  # Isso permite requisições de qualquer origem
 
 # 🔹 Carregar modelo treinado
 modelo = joblib.load("random_forest_model.pkl")
